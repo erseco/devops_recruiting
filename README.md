@@ -2,7 +2,7 @@
 
 >It is not mandatory to finish all these exercises, but we would appreciate it if you explain how you solved them. Do a PR with your answers.
 
-## 1. Check this configuration file and answer the questions
+### 1. Check this configuration file and answer the questions
 
 ```
  http {
@@ -54,14 +54,14 @@
   ```
 - What is doing this line? `set $calendar_app_server exo-calendar:8891`
 
-## 2. Create a REST service (choose your favourite language, but you cannot use Flask) with three entrypoints, we will test it with this sentences
+### 2. Create a REST service (choose your favourite language, but you cannot use Flask) with three entrypoints, we will test it with this sentences
 - `curl -X POST -H "Content-Type: application/json" -d '{"name":"your name"}' localhost:8001/hello/` must return your name
 - `curl -X GET localhost:8001/hour/japan/` must return the current time in Tokyo
 - `curl -X GET localhost:8001/weather/japan/` must return the current temperature in Tokyo, you should use a public forecast API.
 
-## 3. Write a Dockerfile to pack the previous REST service in a Docker container, try to create it as smallest as you can.
+### 3. Write a Dockerfile to pack the previous REST service in a Docker container, try to create it as smallest as you can.
 
-## 4. Check the next Dockerfile and answer the questions:
+### 4. Check the next Dockerfile and answer the questions:
 ```
 FROM node:11-alpine AS base
 
@@ -88,19 +88,19 @@ CMD [ "npm", "start" ]
 - Why are we using `COPY` twice?
 - Upload it to Docker Hub
 
-## 4. Check this repo, there is a `python_app` folder. Modify the code to allow printing the weather of every city in the list. Try to do TDD also.
+### 4. Check this repo, there is a `python_app` folder. Modify the code to allow printing the weather of every city in the list. Try to do TDD also.
 
-## 5. Which ports are open in `www.exolever.com`? How did you check it?
+### 5. Which ports are open in `www.exolever.com`? How did you check it?
 
-## 6. Which is the latest version of the Docker compose file reference?
+### 6. Which is the latest version of the Docker compose file reference?
 
-## 7. Create a bash script that asks the user for a "name" and call your webservice. Use colors if you can!
+### 7. Create a bash script that asks the user for a "name" and call your webservice. Use colors if you can!
 
-## 8. OPTIONAL Build the container of the question 3 with travis-ci
+### 8. OPTIONAL Build the container of the question 3 with travis-ci
 
-## 9. OPTIONAL Create a docker-compose.yml to run the previous container
+### 9. OPTIONAL Create a docker-compose.yml to run the previous container
 
-## 10. OPTIONAL What is true regarding the following code?
+### 10. OPTIONAL What is true regarding the following code?
 
 ```
 async function getList () {
@@ -115,7 +115,7 @@ async function main () {
 main()
 ```
 
--a) It will fail to execute as the async keyword is incorrectly used
--b) This code is correct and does not need to be improved
--c) The code will execute but the await function call will never return as the promises are not properly chained
--d) The code will execute correctly but the first async keyword should be removed as the function getList() already returns a promise
+- a) It will fail to execute as the async keyword is incorrectly used
+- b) This code is correct and does not need to be improved
+- c) The code will execute but the await function call will never return as the promises are not properly chained
+- d) The code will execute correctly but the first async keyword should be removed as the function getList() already returns a promise

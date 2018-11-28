@@ -44,15 +44,22 @@
   }
 ```
 - What is this file?
+  - Is a nginx configuration file
 - There are errors on it? Which ones?
+  - The line `proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for` doesn't have ending semicolon
+  - The ending bracket is missing
+  - In gzip_types you will get a warngin because text/html is defined by default, so you will sefine twice
 - If you found errors, how did you found it?
+  - nginx has a built-in sytax checker, invoke it with `nginx -c -t <file_path>`
 - What is doing the section: 
   ```
       location ~* ^/.+/backup/$ {
           deny all;
       }
   ```
+  - Is blocking the access to **all** backup folders contained inside a list of directories
 - What is doing this line? `set $calendar_app_server exo-calendar:8891`
+  - Is setting a variable with a value (is a trick to allow start nginx if the host `exo-calendar:8891` is down 
 
 ### 2. Create a REST service (choose your favourite language, but you cannot use Flask) with three entrypoints, we will test it with this sentences
 - `curl -X POST -H "Content-Type: application/json" -d '{"name":"your name"}' localhost:8001/hello/` must return your name
@@ -84,15 +91,23 @@ COPY . .
 CMD [ "npm", "start" ]
 ```
 - What is wrong in this Dockerfile
+  - Alpine is not using apt-get, is using `apk` as package manager
+  - If you are using a node alpine image node is already installed, you don't need to install it
+  - If you call `COPY` with many files, the destination must be a directory, you must set `COPY package.json npm-shrinkwrap.json ./`
 - There are missing parts, can you complete it?
+  - _Trap question_
 - Why are we using `COPY` twice?
+  - For optimizing the docker stage cache to not doing `npm install` on every build
 - Upload it to Docker Hub
 
 ### 4. Check this repo, there is a `python_app` folder. Modify the code to allow printing the weather of every city in the list. Try to do TDD also.
 
 ### 5. Which ports are open in `www.exolever.com`? How did you check it?
+- 80 (http) and 443 (https)
+- with `nmap www.exolever.com` or any online port checker
 
 ### 6. Which is the latest version of the Docker compose file reference?
+- You can check it in https://docs.docker.com/compose/compose-file/, the current file reference is **3.7** and the docker engine version is **18.06.0+**
 
 ### 7. Create a bash script that asks the user for a "name" and call your webservice. Use colors if you can!
 
@@ -118,4 +133,4 @@ main()
 - a) It will fail to execute as the async keyword is incorrectly used
 - b) This code is correct and does not need to be improved
 - c) The code will execute but the await function call will never return as the promises are not properly chained
-- d) The code will execute correctly but the first async keyword should be removed as the function getList() already returns a promise
+**- d) The code will execute correctly but the first async keyword should be removed as the function getList() already returns a promise**

@@ -28,18 +28,18 @@ app.post('/hello', function(request, response){
  *    GET: Devolver la hora en Tokyo
  */
 app.get('/hour/japan', function(request, response){
-    var timeTokyo = moment().add(9, 'hours').format('HH:mm:ss');
+    var timeTokyo = moment().locale('es').add(8, 'hours').format('HH:mm:ss');
     response.status(200).type('json').send("Hora en Tokyo: " + timeTokyo + '\n');    
 });
 
 /*  "/weather/japan"
- *    GET: Devolver la hora en Tokyo
+ *    GET: Devolver la temperatura en Tokyo
  */
 app.get('/weather/japan', function(request, response){
     weather.getAllWeather(function(err, JSONObj){
-        var weatherTokyo = JSONObj;
+        console.log(JSONObj);
+        response.status(200).type('json').send("Temperatura en Tokyo: " + JSONObj.main.temp + "º \n");
     });   
-    response.status(200).type('json').send(weatherTokyo + '\n');  
 });
 
 // Lanzamos la aplicacion

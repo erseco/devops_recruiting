@@ -38,15 +38,39 @@ Una vez definido el *Dockerfile* los pasos seguidos para su construcción, ejecu
 2. Ya podemos hacer uso de curl.
 3. Una vez probado, subimos el contenedor creado a *Docker Hub*:
     ~~~
-    
+    docker tag nombreImagen luiisgallego/appExoLever
     ~~~
     ~~~
-    
+    docker push luiisgallego/appExoLever
     ~~~
 
+### 4. Check the next Dockerfile and answer the questions:
+
+1. What is wrong in this Dockerfile:
+
+Podemos encontrar varios errores, por ejemplo:
+- La instrucción *RUN apt-get install nodejs* es incorrecta por dos razones, si estamos utilizando *alpine* con *node:11*, declarado al inicio (FROM node:11-alpine AS base), ya tenemos preinstalado *nodejs*. Además, si consultamos la [wiki](https://wiki.alpinelinux.org/wiki/Alpine_Linux_package_management) de *alpine* podemos ver que este no usa apt-get sino *apk*.
+
+2. There are missing parts, can you complete it?
+
+En principio veo el *Dockerfile* completo. Si el *package.json* tiene bien definidas todas las dependencias la aplicación debe funcionar correctamente. Posiblemente sea necesario añadir un puerto de escucha mediante EXPOSE.
+
+3. Why are we using COPY twice?
+
+Se usa así para aprovechar la caché de Docker. Podemos encontrar mas información [aquí](http://bitjudo.com/blog/2014/03/13/building-efficient-dockerfiles-node-dot-js/).
+
+4. Upload it to Docker Hub
 
 
+### 5. Check this repo, there is a python_app folder. Modify the code to allow printing the weather of every city in the list. Try to do TDD also.
 
+
+### 6. Which ports are open in www.exolever.com? How did you check it?
+
+
+### 7. Which is the latest version of the Docker compose file reference?
+
+Según la información oficial de *Docker*, que podemos encontrar [aquí](https://docs.docker.com/compose/compose-file/), la última versión es la *3.7*.
 
 
     ~~~

@@ -28,7 +28,7 @@ app.post('/hello', function(request, response){
  *    GET: Devolver la hora en Tokyo
  */
 app.get('/hour/japan', function(request, response){
-    var timeTokyo = moment().add(8, 'hours').format('HH:mm:ss');
+    var timeTokyo = moment().add(9, 'hours').format('HH:mm:ss');
     response.status(200).type('json').send("Hora en Tokyo: " + timeTokyo + '\n');    
 });
 

@@ -1,0 +1,20 @@
+{
+    "author": "Luis Gallego Quero <lgaq94@gmail.com>",
+    "name": "app",
+    "description": "Ejercicio 2",
+    "version": "1.0.0",
+    "main": "./app.js",
+    "scripts": {
+        "start": "node app.js"
+    },
+    "dependencies": {
+        "body-parser": "^1.18.3",
+        "express": "^4.16.4",
+        "moment": "^2.24.0",
+        "moment-timezone": "^0.5.23",
+        "openweather-apis": "^3.3.5"
+    },
+    "engines": {
+        "node": ">=0.8"
+    }
+}

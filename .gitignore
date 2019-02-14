@@ -106,3 +106,6 @@ venv.bak/
 # nodejs
 Resolucion_LuisGallego/node_modules
 Resolucion_LuisGallego/package-lock.json
+node_modules
+package-lock.json
+

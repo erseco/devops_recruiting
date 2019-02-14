@@ -109,13 +109,9 @@ Podemos encontrar el contenedor creado [aquí](https://hub.docker.com/r/luiisgal
 
 ### 6. Which ports are open in www.exolever.com? How did you check it?
 
-
+Podemos encontrar dos puertos abiertos, el 80 para http y el 443 para https. Esto lo hemos podido comprobar mediante *nmap*.
 
 ### 7. Which is the latest version of the Docker compose file reference?
 
 Según la información oficial de *Docker*, que podemos encontrar [aquí](https://docs.docker.com/compose/compose-file/), la última versión es la *3.7*.
 
-
-    ~~~
-    
-    ~~~

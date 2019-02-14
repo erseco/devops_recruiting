@@ -3,5 +3,4 @@ sudo: false
 node_js:
   - node
 script:
-  - cd Resolucion_LuisGallego
   - npm test

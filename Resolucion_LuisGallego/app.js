@@ -17,6 +17,12 @@ weather.setUnits('metric');
 var ownKey = '0f2925310d3fe6a78b65952cf62d8951';
 weather.setAPPID(ownKey);
 
+//////////////////////
+app.get('/', function(request, response){
+    response.status(200).type('json').send();    
+});
+//////////////////////
+
 /*  "/hello"
  *    GET: Devuelve el nombre que se le pasó como parametro
  */
@@ -45,3 +51,6 @@ app.get('/weather/japan', function(request, response){
 app.listen(app.get('puerto'), server_ip_address, function() {
     console.log("Aplicacion corriendo en " + server_ip_address + ":" + app.get('puerto'));    
 });
+
+// Exporta la variable para poder hacer tests
+module.exports = app;

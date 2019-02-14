@@ -59,6 +59,7 @@ Una vez definido el *Dockerfile* los pasos seguidos para su construcción, ejecu
     ~~~
     docker build -t luiisgallego/app .
     ~~~
+    Lo lanzamos para comprobar que funciona correctamente.
     ~~~
     docker run -p 8001:8001 -d luiisgallego/app
     ~~~
@@ -77,8 +78,7 @@ Podemos encontrar el contenedor creado [aquí](https://hub.docker.com/r/luiisgal
 
 1. What is wrong in this Dockerfile:
 
-Podemos encontrar varios errores, por ejemplo:
-- La instrucción *RUN apt-get install nodejs* es incorrecta por dos razones, si estamos utilizando *alpine* con *node:11*, declarado al inicio (FROM node:11-alpine AS base), ya tenemos preinstalado *nodejs*. Además, si consultamos la [wiki](https://wiki.alpinelinux.org/wiki/Alpine_Linux_package_management) de *alpine* podemos ver que este no usa apt-get sino *apk*.
+La instrucción *RUN apt-get install nodejs* es incorrecta por dos razones, si estamos utilizando *alpine* con *node:11*, declarado al inicio (FROM node:11-alpine AS base), ya tenemos preinstalado *nodejs*. Además, si consultamos la [wiki](https://wiki.alpinelinux.org/wiki/Alpine_Linux_package_management) de *alpine* podemos ver que este no usa apt-get sino *apk*.
 
 2. There are missing parts, can you complete it?
 
@@ -89,6 +89,19 @@ En principio veo el *Dockerfile* completo. Si el *package.json* tiene bien defin
 Se usa así para aprovechar la caché de Docker. Podemos encontrar mas información [aquí](http://bitjudo.com/blog/2014/03/13/building-efficient-dockerfiles-node-dot-js/).
 
 4. Upload it to Docker Hub
+
+Se ha realizado la subida, aunque quizás esta no tenga sentido. Para realizarla se ha eliminado primeramente *RUN apt-get install nodejs* ya que es innecesario, además se ha eliminado la línea *COPY package.json npm-shrinkwrap.json .* ya que ambos archivos no existen. Tras esto, ha sido construido de la siguiente forma:
+~~~
+docker build -t luiisgallego/ejercicio4 .
+~~~
+~~~
+docker tag luiisgallego/ejercicio4 luiisgallego/ejercicio4
+~~~
+~~~
+docker push luiisgallego/ejercicio4
+~~~
+
+Podemos encontrar el contenedor creado [aquí](https://hub.docker.com/r/luiisgallego/ejercicio4). En el ejercicio anterior también se creó un contenedor para la aplicación desarrollada.
 
 
 ### 5. Check this repo, there is a python_app folder. Modify the code to allow printing the weather of every city in the list. Try to do TDD also.

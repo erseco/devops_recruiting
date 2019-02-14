@@ -3,4 +3,5 @@ sudo: false
 services:
   - docker
 script:
+  - cd Resolucion_LuisGallego
   - npm test

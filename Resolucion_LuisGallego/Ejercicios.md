@@ -115,3 +115,12 @@ Podemos encontrar dos puertos abiertos, el 80 para http y el 443 para https. Est
 
 Según la información oficial de *Docker*, que podemos encontrar [aquí](https://docs.docker.com/compose/compose-file/), la última versión es la *3.7*.
 
+### 8. Create a bash script that asks the user for a "name" and call your webservice. Use colors if you can!
+
+### 9. Build the container of the question 3 with travis-ci
+
+### 10. Create a docker-compose.yml to run the previous container
+
+### 11. What is true regarding the following code?
+
+La respuesta correcta es la *d) The code will execute correctly but the first async keyword should be removed as the function getList() already returns a promise*.

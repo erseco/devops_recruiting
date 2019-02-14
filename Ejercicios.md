@@ -27,7 +27,7 @@ Según el siguiente [enlace](http://nginx.org/en/docs/http/ngx_http_rewrite_modu
 
 ### 2. Create a REST service (choose your favourite language, but you cannot use Flask) with three entrypoints, we will test it with this sentences
 
-Para la realización del ejercicio vamos a hacer uso de Node.js bajo el framework Express principalmente. Con estas dos herramientas construiremos el servicio que se nos pide, aunque haremos uso de alguna más en su desarrollo. Podemos encontrar el código [aquí](https://github.com/luiisgallego/devops_recruiting/blob/master/Resolucion_LuisGallego/app.js).
+Para la realización del ejercicio vamos a hacer uso de Node.js bajo el framework Express principalmente. Con estas dos herramientas construiremos el servicio que se nos pide, aunque haremos uso de alguna más en su desarrollo. Podemos encontrar el código [aquí](https://github.com/luiisgallego/devops_recruiting/blob/master/app.js).
 
 Para la primera entrada, tan solo tenemos que tomar el request y devolver el parámetro deseado. En la segunda, como buscamos la hora en Tokyo, hemos usado la librería [Moments.js](https://momentjs.com/). Para ello hemos usado como base nuestra hora local, y añadido la diferencia horaria. Finalmente, en la última entrada que se pedía, para la temperatura hemos usado la api [openweather](https://www.npmjs.com/package/openweather-apis), que aunque solo mostramos la temperatura, esta nos proporcionaba bastante información meteorológica del lugar marcado.
 
@@ -37,7 +37,7 @@ Indicar que en este último caso era necesario obtener una api key, y por simpli
 
 Para hacer uso de la aplicación tenemos que seguir los siguiente pasos:
 
-1. Instalar las dependencias (una vez que estamos en la carpeta *Resolucion_LuisGallego*):
+1. Instalar las dependencias:
     ~~~
     npm install
     ~~~
@@ -49,7 +49,7 @@ Para hacer uso de la aplicación tenemos que seguir los siguiente pasos:
 
 ### 3. Write a Dockerfile to pack the previous REST service in a Docker container, try to create it as smallest as you can.
 
-El *Dockerfile* en cuestión lo podemos encontrar [aquí](https://github.com/luiisgallego/devops_recruiting/blob/master/Resolucion_LuisGallego/Dockerfile).
+El *Dockerfile* en cuestión lo podemos encontrar [aquí](https://github.com/luiisgallego/devops_recruiting/blob/master/Dockerfile).
 
 En él se han buscado dos cosas, que sea lo más simple posible y que además, la imagen del contenedor ocupe el mínimo espacio posible, por eso hemos hecho uso de una imagen *alpine* con *node.js* preinstalado. Este tipo de imagen es de las más reducidas que podemos encontrar y además nos permite que en nuestro *Dockerfile* nos podamos saltar toda la instalación de *Node.js* y centrarnos directamente en las dependencias de nuestra aplicación y el lanzamiento de esta.
 
@@ -117,13 +117,15 @@ Según la información oficial de *Docker*, que podemos encontrar [aquí](https:
 
 ### 8. Create a bash script that asks the user for a "name" and call your webservice. Use colors if you can!
 
-El script para la realización de este ejercicio lo podemos encontrar [aquí](https://github.com/luiisgallego/devops_recruiting/blob/master/Resolucion_LuisGallego/ejercicio7.sh).
+El script para la realización de este ejercicio lo podemos encontrar [aquí](https://github.com/luiisgallego/devops_recruiting/blob/master/ejercicio7.sh).
 
 Si observamos el archivo podemos ver que una vez solicitado tu nombre, levanta la aplicación anteriormente creada y realiza la consulta curl, devolviendo esta el nombre que se introdujo inicialmente. Ademas, como la aplicación debe quedarse en segundo plano para poder realizar la consulta, al final del script matamos este proceso y así dejamos también el puerto libre. Para este último paso he usado la siguiente [consulta](https://stackoverflow.com/questions/3510673/find-and-kill-a-process-in-one-line-using-bash-and-regex) en *stackoverflow*. 
 
 Para añadir colores también se ha consultado *stackoverflow*, lo podemos ver en este [enlace](https://stackoverflow.com/questions/5947742/how-to-change-the-output-color-of-echo-in-linux).
 
 ### 9. Build the container of the question 3 with travis-ci
+
+He utilizado travis para realizar los test a la hora del despliegue como se puede ver [aquí](https://travis-ci.com/luiisgallego/devops_recruiting) aunque finalmente no se ha llegado a realizar la construcción del contenedor Docker posterior.
 
 ### 10. Create a docker-compose.yml to run the previous container
 

@@ -1,3 +1,30 @@
+### 1. Check this configuration file and answer the questions
+
+- What is this file?
+
+Es un archivo de *Nginx*, que según el siguiente [enlace](https://www.nginx.com/resources/wiki/start/topics/examples/full/) corresponde al de configuración (.conf).
+
+- There are errors on it? Which ones?
+
+He localizado dos errores, uno es en la línea correspondiente a *proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for* que le falta el punto y coma final. Y el segundo sería el corchete final, correspondiente a *http {*.
+
+- If you found errors, how did you found it?
+
+La corrección sería añadir el punto y coma y el corchete que faltan.
+
+- What is doing the section: 
+  ```
+      location ~* ^/.+/backup/$ {
+          deny all;
+      }
+  ```
+
+Con *deny all* se está bloqueando el paso a una serie de archivos.
+
+- What is doing this line? `set $calendar_app_server exo-calendar:8891`
+
+Según el siguiente [enlace](http://nginx.org/en/docs/http/ngx_http_rewrite_module.html#set), *set* se encarga de establecer un valor a la variable que especifiquemos. En este caso se está asignando en *$calendar_app_server* el valor de *exo-calendar:8891*.
+
 ### 2. Create a REST service (choose your favourite language, but you cannot use Flask) with three entrypoints, we will test it with this sentences
 
 Para la realización del ejercicio vamos a hacer uso de Node.js bajo el framework Express principalmente. Con estas dos herramientas construiremos el servicio que se nos pide, aunque haremos uso de alguna más en su desarrollo. Podemos encontrar el código [aquí](https://github.com/luiisgallego/devops_recruiting/blob/master/Resolucion_LuisGallego/app.js).
@@ -66,6 +93,7 @@ Se usa así para aprovechar la caché de Docker. Podemos encontrar mas informaci
 
 
 ### 6. Which ports are open in www.exolever.com? How did you check it?
+
 
 
 ### 7. Which is the latest version of the Docker compose file reference?

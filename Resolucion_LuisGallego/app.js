@@ -17,8 +17,8 @@ weather.setUnits('metric');
 var ownKey = '0f2925310d3fe6a78b65952cf62d8951';
 weather.setAPPID(ownKey);
 
-/*  "/hour/japan"
- *    GET: Devolver la hora en Tokyo
+/*  "/hello"
+ *    GET: Devuelve el nombre que se le pasó como parametro
  */
 app.post('/hello', function(request, response){  
     response.status(200).type('json').send(request.body.name + '\n');
@@ -37,7 +37,6 @@ app.get('/hour/japan', function(request, response){
  */
 app.get('/weather/japan', function(request, response){
     weather.getAllWeather(function(err, JSONObj){
-        console.log(JSONObj);
         response.status(200).type('json').send("Temperatura en Tokyo: " + JSONObj.main.temp + "º \n");
     });   
 });

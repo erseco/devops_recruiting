@@ -117,6 +117,12 @@ Según la información oficial de *Docker*, que podemos encontrar [aquí](https:
 
 ### 8. Create a bash script that asks the user for a "name" and call your webservice. Use colors if you can!
 
+El script para la realización de este ejercicio lo podemos encontrar [aquí](https://github.com/luiisgallego/devops_recruiting/blob/master/Resolucion_LuisGallego/ejercicio7.sh).
+
+Si observamos el archivo podemos ver que una vez solicitado tu nombre, levanta la aplicación anteriormente creada y realiza la consulta curl, devolviendo esta el nombre que se introdujo inicialmente. Ademas, como la aplicación debe quedarse en segundo plano para poder realizar la consulta, al final del script matamos este proceso y así dejamos también el puerto libre. Para este último paso he usado la siguiente [consulta](https://stackoverflow.com/questions/3510673/find-and-kill-a-process-in-one-line-using-bash-and-regex) en *stackoverflow*. 
+
+Para añadir colores también se ha consultado *stackoverflow*, lo podemos ver en este [enlace](https://stackoverflow.com/questions/5947742/how-to-change-the-output-color-of-echo-in-linux).
+
 ### 9. Build the container of the question 3 with travis-ci
 
 ### 10. Create a docker-compose.yml to run the previous container

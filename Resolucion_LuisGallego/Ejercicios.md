@@ -45,7 +45,7 @@ Para hacer uso de la aplicación tenemos que seguir los siguiente pasos:
     ~~~
     npm start
     ~~~
-3. Ahora ya podemos abrir otra terminal y realizar las órdenes curl pues nuestra aplicación estará corriendo en el puerto 8001.
+3. Ahora ya podemos abrir otra terminal y realizar las órdenes *curl* pues nuestra aplicación estará corriendo en el puerto 8001.
 
 ### 3. Write a Dockerfile to pack the previous REST service in a Docker container, try to create it as smallest as you can.
 
@@ -62,14 +62,16 @@ Una vez definido el *Dockerfile* los pasos seguidos para su construcción, ejecu
     ~~~
     docker run -p 8001:8001 -d luiisgallego/app
     ~~~
-2. Ya podemos hacer uso de curl.
+2. Ya podemos hacer uso de *curl*.
 3. Una vez probado, subimos el contenedor creado a *Docker Hub*:
     ~~~
-    docker tag nombreImagen luiisgallego/appExoLever
+    docker tag luiisgallego/app luiisgallego/appExoLever
     ~~~
     ~~~
     docker push luiisgallego/appExoLever
     ~~~
+
+Podemos encontrar el contenedor creado [aquí](https://hub.docker.com/r/luiisgallego/appexolever).
 
 ### 4. Check the next Dockerfile and answer the questions:
 

@@ -105,7 +105,7 @@ Podemos encontrar el contenedor creado [aquí](https://hub.docker.com/r/luiisgal
 
 ### 5. Check this repo, there is a python_app folder. Modify the code to allow printing the weather of every city in the list. Try to do TDD also.
 
-Para la realización de este ejercicio hemos vuelto a usar la api de *openweather*, pero de forma distinta. Esta vez tan solo le tenemos que añadir a la url la ciudad en concreto y obtendemos el json con toda la información meteorológica.
+Para la realización de este ejercicio hemos vuelto a usar la api de *openweather*, pero de forma distinta. Esta vez tan solo le tenemos que añadir a la url la ciudad en concreto y obtendremos el json con toda la información meteorológica.
 
 Para su funcionamiento tenemos que instalar tanto Flask como requests, una vez instalado, tan solo tenemos que lanzar la aplicación y la tendremos disponible en el puerto 5000.
 
@@ -121,7 +121,7 @@ Según la información oficial de *Docker*, que podemos encontrar [aquí](https:
 
 El script para la realización de este ejercicio lo podemos encontrar [aquí](https://github.com/luiisgallego/devops_recruiting/blob/master/ejercicio7.sh).
 
-Si observamos el archivo podemos ver que una vez solicitado tu nombre, levanta la aplicación anteriormente creada y realiza la consulta curl, devolviendo esta el nombre que se introdujo inicialmente. Ademas, como la aplicación debe quedarse en segundo plano para poder realizar la consulta, al final del script matamos este proceso y así dejamos también el puerto libre. Para este último paso he usado la siguiente [consulta](https://stackoverflow.com/questions/3510673/find-and-kill-a-process-in-one-line-using-bash-and-regex) en *stackoverflow*. 
+Si observamos el archivo podemos ver que una vez solicitado tu nombre, levanta la aplicación anteriormente creada y realiza la consulta curl, devolviendo esta el nombre que se introdujo inicialmente. Además, como la aplicación debe quedarse en segundo plano para poder realizar la consulta, al final del script matamos este proceso y así dejamos también el puerto libre. Para este último paso he usado la siguiente [consulta](https://stackoverflow.com/questions/3510673/find-and-kill-a-process-in-one-line-using-bash-and-regex) en *stackoverflow*. 
 
 Para añadir colores también se ha consultado *stackoverflow*, lo podemos ver en este [enlace](https://stackoverflow.com/questions/5947742/how-to-change-the-output-color-of-echo-in-linux).
 

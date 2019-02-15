@@ -17,17 +17,19 @@ weather.setUnits('metric');
 var ownKey = '0f2925310d3fe6a78b65952cf62d8951';
 weather.setAPPID(ownKey);
 
-//////////////////////
+/*  "/"
+ *    GET: Devolver status OK
+ */
 app.get('/', function(request, response){
-    response.status(200).type('json').send();    
+    respuesta = { "status" : "OK" };
+    response.status(200).type('json').send(respuesta);    
 });
-//////////////////////
 
 /*  "/hello"
  *    GET: Devuelve el nombre que se le pasó como parametro
  */
 app.post('/hello', function(request, response){  
-    response.status(200).type('json').send(request.body.name + '\n');
+    response.status(200).send(request.body.name + '\n');
 });
 
 /*  "/hour/japan"
@@ -35,7 +37,7 @@ app.post('/hello', function(request, response){
  */
 app.get('/hour/japan', function(request, response){
     var timeTokyo = moment().locale('es').add(8, 'hours').format('HH:mm:ss');
-    response.status(200).type('json').send("Hora en Tokyo: " + timeTokyo + '\n');    
+    response.status(200).send("Hora en Tokyo: " + timeTokyo + '\n');    
 });
 
 /*  "/weather/japan"
@@ -43,7 +45,7 @@ app.get('/hour/japan', function(request, response){
  */
 app.get('/weather/japan', function(request, response){
     weather.getAllWeather(function(err, JSONObj){
-        response.status(200).type('json').send("Temperatura en Tokyo: " + JSONObj.main.temp + "º \n");
+        response.status(200).send("Temperatura en Tokyo: " + JSONObj.main.temp + "º \n");
     });   
 });
 

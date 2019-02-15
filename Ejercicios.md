@@ -106,6 +106,9 @@ Podemos encontrar el contenedor creado [aquí](https://hub.docker.com/r/luiisgal
 
 ### 5. Check this repo, there is a python_app folder. Modify the code to allow printing the weather of every city in the list. Try to do TDD also.
 
+Para la realización de este ejercicio hemos vuelto a usar la api de *openweather*, pero de forma distinta. Esta vez tan solo le tenemos que añadir a la url la ciudad en concreto y obtendemos el json con toda la información meteorológica.
+
+Para su funcionamiento tenemos que instalar tanto Flask como requests, una vez instalado, tan solo tenemos que lanzar la aplicación y la tendremos disponible en el puerto 5000.
 
 ### 6. Which ports are open in www.exolever.com? How did you check it?
 
